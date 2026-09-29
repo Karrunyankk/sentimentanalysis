@@ -1,0 +1,34 @@
+
+nltk.download('vader_lexicon')
+
+df = pd.read_csv("Instagram-datasets.csv") 
+
+sia = SentimentIntensityAnalyzer()
+
+def analyze_sentiment_vader(text):
+    """Analyze sentiment using VADER."""
+    score = sia.polarity_scores(str(text))
+    if score['compound'] >= 0.05:
+        return "Positive"
+    elif score['compound'] <= -0.05:
+        return "Negative"
+    else:
+        return "Neutral"
+
+def analyze_sentiment_textblob(text):
+    """Analyze sentiment using TextBlob."""
+    analysis = TextBlob(str(text))
+    if analysis.sentiment.polarity > 0:
+        return "Positive"
+    elif analysis.sentiment.polarity < 0:
+        return "Negative"
+    else:
+        return "Neutral"
+
+df['VADER_Sentiment'] = df['comment'].apply(analyze_sentiment_vader)
+df['TextBlob_Sentiment'] = df['comment'].apply(analyze_sentiment_textblob)
+
+
+df.to_csv("socialmedia_sentiment_analysis.csv", index=False)
+
+print("Sentiment analysis completed and saved to 'socialmedia_sentiment_analysis.csv'")
