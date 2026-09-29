@@ -9,9 +9,6 @@ This project performs **sentiment analysis** on an Instagram dataset, classifyin
 - 📁 Export results to Excel (.xlsx)
 - 📊 Analyze overall sentiment distribution
 
-## 🎥 Demo
-
-Watch the video demo here: [https://www.linkedin.com/posts/bala-krishnan-0534302b9_sentimentanalysis-instagramdata-datascience-activity-7340757500532551680-0eX2?utm_source=share&utm_medium=member_desktop&rcm=ACoAAExqcz8BL7K_7pQHwqNY3pjaeYvc2G7VjW8](#)  
 
 
 ## 🛠️ Technologies Used
